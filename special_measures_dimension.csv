@@ -1,4 +1,16 @@
 speacial_measures_surrogate_key,status,region,description,isFederal,start_date,end_date
+100,Private gathering restrictions,durham,"restrictions to 10 indoors, 25 outdoors",True,2020-09-01,2020-10-01
+100,Private gathering restrictions,halton,"restrictions to 10 indoors, 25 outdoors",True,2020-09-01,2020-10-01
+100,Private gathering restrictions,peel,"restrictions to 10 indoors, 25 outdoors",True,2020-09-01,2020-10-01
+100,Private gathering restrictions,york,"restrictions to 10 indoors, 25 outdoors",True,2020-09-01,2020-10-01
+100,Private gathering restrictions,toronto,"restrictions to 10 indoors, 25 outdoors",True,2020-09-01,2020-10-01
+100,Private gathering restrictions,ottawa,"restrictions to 10 indoors, 25 outdoors",True,2020-09-01,2020-10-01
+100,Acitivies closures,durham,"Closure of all restaurants, bars, gyms, movie theatres and casinos",True,2020-10-02,2020-11-06
+100,Acitivies closures,halton,"Closure of all restaurants, bars, gyms, movie theatres and casinos",True,2020-10-02,2020-11-06
+100,Acitivies closures,peel,"Closure of all restaurants, bars, gyms, movie theatres and casinos",True,2020-10-02,2020-11-06
+100,Acitivies closures,york,"Closure of all restaurants, bars, gyms, movie theatres and casinos",True,2020-10-02,2020-11-06
+100,Acitivies closures,toronto,"Closure of all restaurants, bars, gyms, movie theatres and casinos",True,2020-10-02,2020-11-06
+100,Acitivies closures,ottawa,"Closure of all restaurants, bars, gyms, movie theatres and casinos",True,2020-10-02,2020-11-06
 103,Protect,durham,"Strengthened measures: Stronger targeted enforcement, fines and more education to limit the spread. Public health measures for high-risk settings.",False,2020-11-07,2020-11-15
 108,Protect,halton,"Strengthened measures: Stronger targeted enforcement, fines and more education to limit the spread. Public health measures for high-risk settings.",False,2020-11-07,2020-11-15
 119,Restrict,ottawa,"Intermediate measures: Stronger actions, restrictions and enforcement while avoiding closures.",False,2020-11-07,2021-12-25
