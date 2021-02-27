@@ -6,6 +6,8 @@ from datetime import datetime, timedelta
 #Switch function
 def switch(x):
     return {
+        'Private gathering restrictions': 'restrictions to 10 indoors, 25 outdoors',
+        'Acitivies closures':'Closure of all restaurants, bars, gyms, movie theatres and casinos',
         'Control': 'Stringent measures: Broader-scale actions and restrictions across multiple sectors to control the spread. Restrictions are the most severe available before widescale business or organizational closings.',
         'Prevent': 'Standard measures: Capacity limits in various public settings where people gather. Highest-risk settings stay closed.',
         'Protect': 'Strengthened measures: Stronger targeted enforcement, fines and more education to limit the spread. Public health measures for high-risk settings.',
@@ -28,8 +30,35 @@ special_measures_dimension = pd.DataFrame(columns=['speacial_measures_surrogate_
 start_date = datetime(2020, 9, 1).date()
 end_date = datetime(2020, 12, 31).date()
 isFederal = False
-
+isDone = False
 for skey, row in ontario_measures.iterrows():
+    matches = ["durham", "halton", "peel", "york", "toronto", "ottawa"]#list of regions
+    specialDates = ["2020-09-01","2020-10-02"]
+
+
+    if(not isDone):
+        for curr_date in specialDates:
+            if(curr_date == '2020-09-01'):
+                curr_end_date = '2020-10-01'
+                status = 'Private gathering restrictions'
+
+            elif(curr_date == '2020-10-02'):
+                curr_end_date = '2020-11-06'
+                status = 'Acitivies closures'
+
+            description = switch(status)#find the description for the current status
+            for x in matches:
+                ontario_measures_row = [skey + 100]#surrogate key
+                ontario_measures_row.append(status)#title
+                ontario_measures_row.append(x)#put only the region
+                ontario_measures_row.append(description)
+                ontario_measures_row.append(True) 
+                ontario_measures_row.append(curr_date)
+                ontario_measures_row.append(curr_end_date)       
+                special_measures_dimension.loc[len(special_measures_dimension)] = ontario_measures_row
+                skey += 1
+        isDone = True
+
     curr_date =pd.to_datetime(row['start_date']).date() 
 
     phu = row['Reporting_PHU']
@@ -43,7 +72,7 @@ for skey, row in ontario_measures.iterrows():
 
                 description = switch(row['Status_PHU'])#find the description for the current status
     
-                ontario_measures_row = [skey + 100]#surrogate key
+                ontario_measures_row = [skey + 111]#surrogate key
                 ontario_measures_row.append(row['Status_PHU'])#title
                 ontario_measures_row.append(x)#put only the region
                 ontario_measures_row.append(description)
