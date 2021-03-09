@@ -1,4 +1,4 @@
-speacial_measures_surrogate_key,status,region,description,isFederal,start_date,end_date
+speacial_measures_surrogate_key,status,region,description,isProvincial,start_date,end_date
 100,Private gathering restrictions,durham,"restrictions to 10 indoors, 25 outdoors",True,2020-09-01,2020-10-01
 101,Private gathering restrictions,halton,"restrictions to 10 indoors, 25 outdoors",True,2020-09-01,2020-10-01
 102,Private gathering restrictions,peel,"restrictions to 10 indoors, 25 outdoors",True,2020-09-01,2020-10-01
