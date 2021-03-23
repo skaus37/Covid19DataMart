@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20204.21.0217.1203                               -->
+<workbook original-version='18.1' source-build='2020.4.2 (20204.21.0217.1203)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Custom SQL Query (group_16)' inline='true' name='federated.1avwxcn1ri6fzq13vfi6k0hxytho' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='www.eecs.uottawa.ca' name='postgres.1icg4xv0dxii2o17ejir90xjtzw4'>
+            <connection authentication='username-password' class='postgres' dbname='group_16' one-time-sql='' port='15432' server='www.eecs.uottawa.ca' username='moake072' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='postgres.1icg4xv0dxii2o17ejir90xjtzw4' name='Custom SQL Query' type='text'><![CDATA[select PHU.city, count(case when W.rain_amount << 1 then 1 else null end) as Sunny,
+	count(case when W.rain_amount >> 1 then 1 else null end) as Rainy
+from data_mart.fact_table as F, data_mart.weather_dimension as W, data_mart.phu_location_dimension as PHU
+where F.weather_key = W.weather_key
+and F.phu_location_key = PHU.phu_location_key
+and F.is_resolved = true
+group by (PHU.city)]]></_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='postgres.1icg4xv0dxii2o17ejir90xjtzw4' name='Custom SQL Query' type='text'><![CDATA[select PHU.city, count(case when W.rain_amount << 1 then 1 else null end) as Sunny,
+	count(case when W.rain_amount >> 1 then 1 else null end) as Rainy
+from data_mart.fact_table as F, data_mart.weather_dimension as W, data_mart.phu_location_dimension as PHU
+where F.weather_key = W.weather_key
+and F.phu_location_key = PHU.phu_location_key
+and F.is_resolved = true
+group by (PHU.city)]]></_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>city</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[city]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>city</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_200F354C1D084DC391F0C4CC39EFB777]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sunny</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[sunny]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>sunny</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_200F354C1D084DC391F0C4CC39EFB777]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rainy</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[rainy]</local-name>
+            <parent-name>[Custom SQL Query]</parent-name>
+            <remote-alias>rainy</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_200F354C1D084DC391F0C4CC39EFB777]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <_.fcp.ObjectModelTableType.true...column caption='Custom SQL Query' datatype='table' name='[__tableau_internal_object_id__].[_200F354C1D084DC391F0C4CC39EFB777]' role='measure' type='quantitative' />
+      <column datatype='string' name='[city]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Canada&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Custom SQL Query' id='_200F354C1D084DC391F0C4CC39EFB777'>
+            <properties context=''>
+              <relation connection='postgres.1icg4xv0dxii2o17ejir90xjtzw4' name='Custom SQL Query' type='text'><![CDATA[select PHU.city, count(case when W.rain_amount << 1 then 1 else null end) as Sunny,
+	count(case when W.rain_amount >> 1 then 1 else null end) as Rainy
+from data_mart.fact_table as F, data_mart.weather_dimension as W, data_mart.phu_location_dimension as PHU
+where F.weather_key = W.weather_key
+and F.phu_location_key = PHU.phu_location_key
+and F.is_resolved = true
+group by (PHU.city)]]></relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Custom SQL Query (group_16)' name='federated.1avwxcn1ri6fzq13vfi6k0hxytho' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1avwxcn1ri6fzq13vfi6k0hxytho'>
+            <column datatype='string' name='[city]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column-instance column='[city]' derivation='None' name='[none:city:nk]' pivot='key' type='nominal' />
+            <column datatype='integer' name='[rainy]' role='measure' type='quantitative' />
+            <column-instance column='[rainy]' derivation='Sum' name='[sum:rainy:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[sunny]' derivation='Sum' name='[sum:sunny:qk]' pivot='key' type='quantitative' />
+            <column datatype='integer' name='[sunny]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1avwxcn1ri6fzq13vfi6k0hxytho].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1avwxcn1ri6fzq13vfi6k0hxytho].[sum:rainy:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1avwxcn1ri6fzq13vfi6k0hxytho].[sum:sunny:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1avwxcn1ri6fzq13vfi6k0hxytho].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1avwxcn1ri6fzq13vfi6k0hxytho].[:Measure Names]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1avwxcn1ri6fzq13vfi6k0hxytho].[Multiple Values]</rows>
+        <cols>([federated.1avwxcn1ri6fzq13vfi6k0hxytho].[none:city:nk] / [federated.1avwxcn1ri6fzq13vfi6k0hxytho].[:Measure Names])</cols>
+      </table>
+      <simple-id uuid='{4669874B-A323-4485-B5D4-2960FD20D4F1}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1avwxcn1ri6fzq13vfi6k0hxytho].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1avwxcn1ri6fzq13vfi6k0hxytho].[:Measure Names]</field>
+            <field>[federated.1avwxcn1ri6fzq13vfi6k0hxytho].[none:city:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{A21D2AA5-40AE-4354-8DE8-6C2FC91AD5D2}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
