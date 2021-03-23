@@ -4,7 +4,7 @@ from data_mart.fact_table F, data_mart.reported_date_dimension D, data_mart.phu_
 where F.reported_date_key=D.reported_date_key and F.phu_location_key=L.phu_location_key and F.is_fatal=true and D.month in ('November','December') and L.city in ('Mississauga','Ottawa') 
 GROUP BY (L.phu_name,D.month);
 
- --number of unresolved cases for rainy and snowy days in Peel and York
+ --number of unresolved cases for rainy and snowy days in Peel and York, there is no result for only snowy days
 select L.phu_name, count(W) as "Sunny", count(WR) as "Rainy", count(WSR) as "Rain and Snow", count(*) as "Total"
 from data_mart.fact_table as F
 INNER JOIN data_mart.phu_location_dimension as L ON L.phu_location_key=F.phu_location_key
