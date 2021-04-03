@@ -3302,8 +3302,8 @@ order by count(*) desc</relation>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='4600' minheight='4600' sizing-mode='vscroll' />
           <zones>
-            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='81' w='100000' x='0' y='0'>
-              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='99734' id='80' param='vert' w='98848' x='576' y='133'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='85' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='99734' id='84' param='vert' w='98848' x='576' y='133'>
                 <zone fixed-size='280' h='10716' id='48' is-fixed='true' name='Cases by measures' w='76170' x='576' y='133'>
                   <layout-cache type-h='fixed' type-w='fixed' />
                   <zone-style>
